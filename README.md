@@ -40,7 +40,7 @@ The script uses the `tkinter` library for the graphical user interface.
   
 ## Demo
 
-https://github.com/AswinPKumar01/Sudoku-Solver-with-GUI/assets/118362715/2b635b9c-d3aa-432e-9a60-d6d3c68019c9
+https://github.com/AswinPKumar01/Sudoku-Solver-with-GUI/assets/118362715/6a424c54-70fe-40f2-8936-f0d63ebd8226
 
 ## Author
 
