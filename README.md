@@ -33,7 +33,7 @@ The script uses the `tkinter` library for the graphical user interface.
 
 2. **Check Your Entries:**
    - Use the "Check" button to verify your entries.
-   - Incorrect entries will be highlighted.
+   - Correct and incorrect entries will be highlighted.
 
 3. **Solve the Puzzle:**
    - Click the "Solve" button to let the script automatically solve the Sudoku puzzle.
