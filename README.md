@@ -37,6 +37,10 @@ The script uses the `tkinter` library for the graphical user interface.
 
 3. **Solve the Puzzle:**
    - Click the "Solve" button to let the script automatically solve the Sudoku puzzle.
+  
+## Demo
+
+https://github.com/AswinPKumar01/Sudoku-Solver-with-GUI/assets/118362715/2b635b9c-d3aa-432e-9a60-d6d3c68019c9
 
 ## Author
 
