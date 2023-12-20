@@ -159,28 +159,37 @@ class SudokuGUI(tk.Tk):
         return board, solved_board
 
     def check_entries(self):
+        correct_entries = 0
+
         for i in range(self.board_size):
             for j in range(self.board_size):
                 user_entry = self.user_entries[i][j].get()
                 if user_entry:
                     try:
                         user_entry = int(user_entry)
-                        if user_entry != self.solution[i][j]:
-                            self.highlight_wrong_entry(i, j)
+                        if user_entry == self.solution[i][j]:
+                            correct_entries += 1
+                            self.highlight_wrong_entry(i, j, 'green')
+                        else:
+                            self.highlight_wrong_entry(i, j, 'red')
                             messagebox.showinfo(
-                                "Wrong Entry", "Incorrect entry at row {} column {}".format(i + 1, j + 1))
+                            "Wrong Entry", "Incorrect entry at row {} column {}".format(i + 1, j + 1))
                     except (ValueError, TypeError):
                         messagebox.showinfo(
-                            "Invalid Entry", "Please enter a valid number.")
+                        "Invalid Entry", "Please enter a valid number.")
+ 
+        if correct_entries == self.board_size**2:
+            messagebox.showinfo("You Won!", "Sudoku completed successfully.")
 
-    def highlight_wrong_entry(self, row, column):
+    def highlight_wrong_entry(self, row, column, color):
         entry = self.entries[row][column]
-        entry.config(bg='red')
+        entry.config(bg=color)
         self.after(DELAY_TIME, lambda row=row, column=column: self.reset_entry_color(row, column))
 
     def reset_entry_color(self, row, column):
         entry = self.entries[row][column]
         entry.config(bg=self.cget('bg'))
+
 
     def solve_sudoku(self):
         start_time = time.time()
